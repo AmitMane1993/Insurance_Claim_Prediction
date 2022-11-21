@@ -1,6 +1,5 @@
 numpy
 pandas
 flask
-os
 mlflow
 gunicorn
