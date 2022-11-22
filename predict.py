@@ -2,16 +2,19 @@
 from flask import Flask,request,app,jsonify,url_for,render_template
 import pandas as pd
 import mlflow
-import os
+#import os
 #from mlflow.tracking import MlflowClient
 
-os.environ["AWS_PROFILE"] = "meet9426"
-#------------------------------------------------------------------------# 
-RUN_ID = "04bbfaf05448493ab222a1a24e963b4b"
-logged_model = f"s3://mlflow-artifacts-rmte/2/{RUN_ID}/artifacts/model"
-loaded_model = mlflow.pyfunc.load_model(logged_model)
-#------------------------------------------------------------------------#
-    
+# os.environ["AWS_PROFILE"] = "meet9426"
+# #------------------------------------------------------------------------# 
+# RUN_ID = "04bbfaf05448493ab222a1a24e963b4b"
+# logged_model = f"s3://mlflow-artifacts-rmte/2/{RUN_ID}/artifacts/model"
+# loaded_model = mlflow.pyfunc.load_model(logged_model)
+# #------------------------------------------------------------------------#
+
+path = r'.\model'
+loaded_model = mlflow.pyfunc.load_model(path)
+
 app = Flask("claims")
 
 def prepare_feat(df):
