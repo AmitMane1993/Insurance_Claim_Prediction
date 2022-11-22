@@ -12,7 +12,7 @@ import mlflow
 # loaded_model = mlflow.pyfunc.load_model(logged_model)
 # #------------------------------------------------------------------------#
 
-path = r'.\model'
+path = r'model'
 loaded_model = mlflow.pyfunc.load_model(path)
 
 app = Flask("claims")
